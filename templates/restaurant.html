@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    {% load static %}
+    
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/restaurant' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:56:06 GMT -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    
+    <link rel="icon" type="image/png" href="{% static 'img/fav.png' %}">
+    <title>Go4Food</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css ' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css ' %}" />
+    
+    <link href="{% static 'vendor/icons/feather.css ' %}" rel="stylesheet" type="text/css">
+    
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css ' %}" rel="stylesheet">
+    
+    <link href="{% static 'css/style.css ' %}" rel="stylesheet">
+    
+    <link href="{% static 'vendor/sidebar/demo.css ' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body class="fixed-bottom-bar">
+    {% include 'header.html'%}
+    <div class="d-none">
+        <div class="bg-primary p-3 d-flex align-items-center">
+            <a class="toggle togglew toggle-2" href="#"><span></span></a>
+            <h4 class="font-weight-bold m-0 text-white">Osahan Bar</h4>
+        </div>
+    </div>
+    <div class="offer-section py-4">
+        <div class="container position-relative">
+            <img alt="#" src="food/static/img/{{restaurentdetails.0.image}}" class="restaurant-pic">
+            <div class="pt-3 text-white">
+                <h2 class="font-weight-bold">{{restaurentdetails.0.Restaurent_name}}</h2>
+                <p class="text-white m-0">{{restaurentdetails.0.address}}</p>
+                <div class="rating-wrap d-flex align-items-center mt-2">
+                    <ul class="rating-stars list-unstyled">
+                        <li>
+                            <i class="feather-star text-warning"></i>
+                            <i class="feather-star text-warning"></i>
+                            
+                            <i class="feather-star text-warning"></i>
+                            <i class="feather-star text-warning"></i>
+                            <i class="feather-star"></i>
+                        </li>
+                    </ul>
+                    <p class="label-rating text-white ml-2 small"> (245 Reviews)</p>
+                </div>
+            </div>
+            <div class="pb-4">
+                <div class="row">
+                    <div class="col-6 col-md-2">
+                        <p class="text-white-50 font-weight-bold m-0 small">Delivery</p>
+                        <p class="text-white m-0">Varies accordingly</p>
+                    </div>
+                    <div class="col-6 col-md-2">
+                        <p class="text-white-50 font-weight-bold m-0 small">Open time</p>
+                        <p class="text-white m-0">{{restaurentdetails.0.Timing}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="p-3 bg-primary bg-primary mt-n3 rounded position-relative">
+            <div class="d-flex align-items-center">
+                <div class="feather_icon">
+                    <a href="#ratings-and-reviews" class="text-decoration-none text-dark"><i class="p-2 bg-light rounded-circle font-weight-bold  feather-upload"></i></a>
+                    <a href="#ratings-and-reviews" class="text-decoration-none text-dark mx-2"><i class="p-2 bg-light rounded-circle font-weight-bold  feather-star"></i></a>
+                    <a href="#ratings-and-reviews" class="text-decoration-none text-dark"><i class="p-2 bg-light rounded-circle font-weight-bold feather-map-pin"></i></a>
+                </div>
+                <a href="{% url 'contact_us' %}" class="btn btn-sm btn-outline-light ml-auto">Contact</a>
+            </div>
+        </div>
+    </div>
+    <!--<div class="container">-->
+    <!--    <div class="">-->
+    <!--        <p class="font-weight-bold pt-4 m-0">FEATURED ITEMS</p>-->
+            
+    <!--        <div class="trending-slider rounded">-->
+    <!--            {% for i in products %}-->
+    <!--            <div class="osahan-slider-item">-->
+    <!--                <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">-->
+    <!--                    <div class="list-card-image">-->
+    <!--                        <a href="{% url 'checkout' %}">-->
+    <!--                    <img alt="#" src="{{i.image}}" class="img-fluid item-img " style="height:300px; width:100%; object-fit: fill;">-->
+    <!--                        </a>-->
+    <!--                    </div>-->
+    <!--                    <div class="p-3 position-relative">-->
+    <!--                        <div class="list-card-body">-->
+    <!--                            <h6 class="mb-1"><a href="{% url 'checkout' %}" class="text-black">{{i.product_name}}</a>-->
+    <!--                            </h6>-->
+    <!--                            <p class="text-gray mb-3">{{i.category}} • {{i.subcategory}} • </p>-->
+    <!--                            <p class="text-gray m-0 me-0"> <span class="text-black-50">{{i.price}} Rs </span></p>-->
+    <!--                        </div>-->
+    <!--                    </div>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--            {%endfor%}-->
+                
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <div class="container position-relative">
+        <div class="row">
+            <div class="col-md-8 pt-3">
+                <div class="shadow-sm rounded bg-white mb-3 overflow-hidden">
+                    <div class="d-flex item-aligns-center">
+                        <p class="font-weight-bold h6 p-3 border-bottom mb-0 w-100">Menu</p>
+                        
+                    </div>
+                    <div class="row m-0">
+                        <h6 class="p-3 m-0 bg-light w-100">Quick Bites <small class="text-black-50">3 ITEMS</small></h6>
+                        <div class="col-md-12 px-0 border-top">
+                            <div class="">
+                                {% for item in products %}
+                                <div class="p-3 border-bottom gold-members">
+                                    <span class="float-right"><a href="#" class="btn btn-outline-secondary btn-sm addcart_btn" id="{{item.id}}" data-toggle="modal" data-target="#extras">ADD</a></span>
+                                    <div class="media">
+                                        <div class="mr-3 font-weight-bold text-danger non_veg">.</div>
+                                        <div class="media-body">
+                                            <h6 class="mb-1">{{item.product_name}} </h6>
+                                            <p class="text-muted mb-0">{{item.price}}</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                {%endfor%}
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+            <!-- cart-->
+            {% if user.name%}
+            <div class="col-md-4 pt-3">
+                <div class="osahan-cart-item rounded rounded shadow-sm overflow-hidden bg-white sticky_sidebar">
+                {% comment %} <form method="POST" action="/payment" id="cartform"> {% endcomment %}
+                    <div class="d-flex border-bottom osahan-cart-item-profile bg-white p-3">
+                        <img alt="osahan" src="{% static 'img/starter1.jpg' %}" class="mr-3 rounded-circle img-fluid">
+                        <div class="d-flex flex-column">
+                            <h6 class="mb-1 font-weight-bold">Your Cart</h6>
+                            <p class="mb-0 small text-muted"><i class="feather-map-pin"></i> </p>
+                        </div>
+                    </div>
+                    <div class="bg-white border-bottom py-2 cartitemslist">
+    
+                        <div class="gold-members d-flex align-items-center justify-content-between px-3 py-2">
+                            <div class="media align-items-center">
+                                <div class="mr-2 text-success">&middot;</div>
+                                <div class="media-body">
+                                    <p class="m-0"></p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <span class="count-number float-right"><button type="button" class="btn-sm left dec btn btn-outline-secondary"> <i class="feather-minus"></i> </button><input class="count-number-input" type="text" readonly="" value="2"><button type="button" class="btn-sm right inc btn btn-outline-secondary"> <i class="feather-plus"></i> </button></span>
+                                <p class="text-gray mb-0 float-right ml-2 text-muted small"></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-3 clearfix border-bottom">
+                        <p class="mb-1">Item Total <span class="float-right text-dark total_price"></span></p>
+                        <p class="mb-1">Delivery Fee<span class="text-info ml-1"><i class="feather-info"></i></span><span class="float-right text-dark Delivery_charge"></span></p>
+                        <p class="mb-1 text-success">Total Discount<span class="float-right text-success Discount"></span></p>
+                        <hr>
+                        <h6 class="font-weight-bold mb-0">TO PAY <span class="float-right total"></span></h6>
+                    </div>
+                    <div class="p-3">
+                        <a href="{% url 'checkout'%}"> <button type="submit" class="btn btn-success btn-block btn-lg" >PAY <span class="total"></span></h6> <i class="feather-arrow-right"></i></button></a>
+                    </div>
+                    <input type="hidden" id="products" name="products" value=""/>
+                    <input type="hidden" id="total" name="total" value=""/>
+                {% comment %} </form> {% endcomment %}
+                </div>
+            </div>
+            {%else%}
+               <a href="{% url 'login'%}"> <button type="button" class="btn btn-primary" style="height:100px; margin:50px;">Click here to Login</button></a>
+            {%endif%}
+        </div>
+    </div>
+    
+    {% comment %} <div class="osahan-menu-fotter fixed-bottom bg-white px-3 py-2 text-center d-none">
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'home' %}" class="text-dark small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0"><i class="feather-home text-dark"></i></p>
+                    Home
+                </a>
+            </div>
+            <div class="col selected">
+                <a href="{% url 'trending' %}" class="text-danger small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0"><i class="feather-map-pin"></i></p>
+                    Trending
+                </a>
+            </div>
+            <div class="col bg-white rounded-circle mt-n4 px-3 py-2">
+                <div class="bg-danger rounded-circle mt-n0 shadow">
+                    <a href="{% url 'checkout' %}" class="text-white small font-weight-bold text-decoration-none">
+                        <i class="feather-shopping-cart"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <a href="{% url 'favorites' %}" class="text-dark small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0"><i class="feather-heart"></i></p>
+                    Favorites
+                </a>
+            </div>
+            <div class="col">
+                <a href="{% url 'profile' %}" class="text-dark small font-weight-bold text-decoration-none">
+                    <p class="h4 m-0"><i class="feather-user"></i></p>
+                    Profile
+                </a>
+            </div>
+        </div>
+    </div> {% endcomment %}
+    
+    
+        {% include 'footer.html'%}
+        
+        <script>
+            function inc(x){
+                $.ajax({
+					    type: 'POST',
+					    url: '/addcart',
+					    data:{'id':x},
+					    dataType:"JSON",
+					    success:function(data){
+                            data1=data['cartitems'];
+                            var res='';
+                            var total=0;
+                            for(var i in data1)
+                            {
+                                res+=`<div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
+                                    <div class="media align-items-center">
+                                        <div class="mr-2 text-danger">&middot;</div>
+                                        <div class="media-body">
+                                            <p class="m-0 product_name" id="${data1[i]['res__id']}">${data1[i]['res__product_name']}</p> 
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="count-number float-right">
+                                            <button type="button" onclick="dec(${data1[i]['res__id']})" class="btn-sm left dec btn btn-outline-secondary"> 
+                                                <i class="feather-minus"></i> 
+                                            </button>
+                                            <input class="count-number-input quantity" type="text" readonly="" value="${data1[i]['quantity']}">
+                                            <button type="button" onclick="inc(${data1[i]['res__id']})" class="btn-sm right  btn btn-outline-secondary"> 
+                                                <i class="feather-plus"></i> 
+                                            </button>
+                                        </span>
+                                        <p class="text-gray mb-0 float-right ml-2 text-muted small">${Number(data1[i]['res__price'])*Number(data1[i]['quantity'])}Rs</p>
+                                        </div>
+                                    </div>`;
+                                    total+=Number(data1[i]['res__price'])*Number(data1[i]['quantity']);
+                            }
+                            $('.cartitemslist').html(res);
+                            $('.total_price').html(total);
+                            $('.total').html(total);
+				        }
+				    });
+            }
+            function dec(x){
+                $.ajax({
+					    type: 'POST',
+					    url: '/removefromcart',
+					    data:{'id':x},
+					    dataType:"JSON",
+					    success:function(data){
+                            data1=data['cartitems'];
+                            var res='';
+                            var total=0;
+                            for(var i in data1)
+                            {
+                                res+=`<div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
+                                    <div class="media align-items-center">
+                                        <div class="mr-2 text-danger">&middot;</div>
+                                        <div class="media-body">
+                                            <p class="m-0 product_name" id="${data1[i]['res__id']}">${data1[i]['res__product_name']}</p> 
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="count-number float-right">
+                                            <button type="button" onclick="dec(${data1[i]['res__id']})" class="btn-sm left dec btn btn-outline-secondary"> 
+                                                <i class="feather-minus"></i> 
+                                            </button>
+                                            <input class="count-number-input quantity" type="text" readonly="" value="${data1[i]['quantity']}">
+                                            <button type="button" onclick="inc(${data1[i]['res__id']})" class="btn-sm right  btn btn-outline-secondary"> 
+                                                <i class="feather-plus"></i> 
+                                            </button>
+                                        </span>
+                                        <p class="text-gray mb-0 float-right ml-2 text-muted small">${Number(data1[i]['res__price'])*Number(data1[i]['quantity'])} Rs</p>
+                                        </div>
+                                    </div>`;
+                                    total+=Number(data1[i]['res__price'])*Number(data1[i]['quantity']);
+                            }
+                            $('.cartitemslist').html(res);
+                            $('.total_price').html(total);
+                            $('.total').html(total);
+				        }
+				    });
+            }
+            $(document).ready(function(){
+                
+                $.ajax({
+					    type: 'POST',
+					    url: '/cartdetails',
+					    dataType:"JSON",
+					    success:function(data){
+                            data1=data['cartitems'];
+                            var res='';
+                            var total=0;
+                            for(var i in data1)
+                            {
+                                res+=`<div class="gold-members d-flex align-items-center justify-content-between px-3 py-2 border-bottom">
+                                    <div class="media align-items-center">
+                                        <div class="mr-2 text-danger">&middot;</div>
+                                        <div class="media-body">
+                                            <p class="m-0 product_name" id="${data1[i]['res__id']}">${data1[i]['res__product_name']}</p> 
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="count-number float-right">
+                                            <button type="button" onclick="dec(${data1[i]['res__id']})" class="btn-sm left dec btn btn-outline-secondary"> 
+                                                <i class="feather-minus"></i> 
+                                            </button>
+                                            <input class="count-number-input quantity" type="text" readonly="" value="${data1[i]['quantity']}">
+                                            <button type="button" onclick="inc(${data1[i]['res__id']})" class="btn-sm right  btn btn-outline-secondary"> 
+                                                <i class="feather-plus"></i> 
+                                            </button>
+                                        </span>
+                                        <p class="text-gray mb-0 float-right ml-2 text-muted small">${Number(data1[i]['res__price'])*Number(data1[i]['quantity'])} Rs</p>
+                                        </div>
+                                    </div>`;
+                                    total+=Number(data1[i]['res__price'])*Number(data1[i]['quantity']);
+                            }
+                            $('.cartitemslist').html(res);
+                            $('.total_price').html(total);
+                            $('.total').html(total);
+				        }
+				    });
+
+                $(".osahan-slider-item:gt(2)").hide();
+                $(".addcart_btn").on('click',function(){
+                    var id=$(this).attr("id");
+                    inc(id);
+                });
+
+                $(".btn-success").on('click',function(){
+                    var products={};
+                    var product_name = $(".product_name");
+                    var quantity=$('.quantity');
+                    for(var i = 0; i < product_name.length; i++){
+                        products[$(product_name[i]).attr("id")]=$(quantity[i]).val();
+                    }
+                    $('#products').val(JSON.stringify(products));
+                    $('#total').val($('.total').html());
+                  
+                    
+                    
+
+                });
+                
+                
+                
+            });
+            
+        </script>
+                
+                
+                
+                <script type="29032a5ff655efb7a4f24d46-text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+                <script type="29032a5ff655efb7a4f24d46-text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+                
+                <script type="29032a5ff655efb7a4f24d46-text/javascript" src="{% static 'vendor/slick/slick.min.js' %}"></script>
+                
+                <script type="29032a5ff655efb7a4f24d46-text/javascript" src="{% static 'vendor/sidebar/hc-offcanvas-nav.js ' %}"></script>
+                
+                <script type="29032a5ff655efb7a4f24d46-text/javascript" src="{% static 'js/osahan.js' %}"></script>
+
+                <script src="{% static 'cdn-cgi/scripts/rocket-loader.min.js' %}" data-cf-settings="29032a5ff655efb7a4f24d46-|49" defer="">
+
+                </script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"746e3a28dfbfc95c","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</body>
+            
+</html>
+    

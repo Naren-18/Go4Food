@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"> {% load static %}
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/my_order' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:56:08 GMT -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    <link rel="icon" type="image/png" href="{% static 'img/fav.png' %}">
+    <title>Go4Food</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css ' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css ' %}" />
+
+    <link href="{% static 'vendor/icons/feather.css ' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css ' %}" rel="stylesheet">
+
+    <link href="{% static 'css/style.css ' %}" rel="stylesheet">
+
+    <link href="{% static 'vendor/sidebar/demo.css ' %}" rel="stylesheet">
+</head>
+
+<body class="fixed-bottom-bar">
+    {% include 'header.html'%}
+    <div class="d-none">
+        <div class="bg-primary border-bottom p-3 d-flex align-items-center">
+            <a class="toggle togglew toggle-2" href="#"><span></span></a>
+            <h4 class="font-weight-bold m-0 text-white">My Order</h4>
+        </div>
+    </div>
+    <section class="py-4 osahan-main-body">
+        <div class="container">
+            <div class="row">
+                {% comment %} <div class="col-md-3 mb-3">
+                    <ul class="nav nav-tabsa custom-tabsa border-0 flex-column bg-white rounded overflow-hidden shadow-sm p-2 c-t-order"
+                        id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link border-0 text-dark py-3 active" id="completed-tab" data-toggle="tab"
+                                href="#completed" role="tab" aria-controls="completed" aria-selected="true">
+                                <i class="feather-check mr-2 text-success mb-0"></i> Completed</a>
+                        </li>
+                        <li class="nav-item border-top" role="presentation">
+                            <a class="nav-link border-0 text-dark py-3" id="progress-tab" data-toggle="tab"
+                                href="#progress" role="tab" aria-controls="progress" aria-selected="false">
+                                <i class="feather-clock mr-2 text-warning mb-0"></i> On Progress</a>
+                        </li>
+                        <li class="nav-item border-top" role="presentation">
+                            <a class="nav-link border-0 text-dark py-3" id="canceled-tab" data-toggle="tab"
+                                href="#canceled" role="tab" aria-controls="canceled" aria-selected="false">
+                                <i class="feather-x-circle mr-2 text-danger mb-0"></i> Canceled</a>
+                        </li>
+                    </ul>
+                </div> {% endcomment %}
+                <div class="tab-content col-md-9" id="myTabContent">
+                    <div class="tab-pane fade show active" id="completed" role="tabpanel"
+                        aria-labelledby="completed-tab">
+                        <div class="order-body">
+
+                            {%for i in orders%}
+                            {% comment %} </div> {% endcomment %}
+                        <div class="pb-3">
+                            <div class="p-3 rounded shadow-sm bg-white">
+                                <div class="d-flex border-bottom pb-3">
+                                    <div class="text-muted mr-3">
+                                        <img alt="#" src="{% static 'img/popular4.png' %}"
+                                            class="img-fluid order_img rounded">
+                                    </div>
+                                    <div>
+                                        <p><strong>ORDER #{{i.order_id}}</strong></p>
+
+                                        <p class="mb-0 font-weight-bold">
+                                            {%for j,k in i.items_json.items%}
+                                        <strong>{{k.5}}-{{k.6}}</strong><br>
+                                           &nbsp;&nbsp;&nbsp; {{j}}){{k.1}}(Rs:{{k.2}})x{{k.0}}=Rs:{{k.4}} <br>
+                                        {%endfor%}
+                                            
+                                            </p>
+                                        <p class="mb-0">{{i.address}}</p>
+                                        {% comment %} <p class="mb-0 small"><a href="{% url 'status_complete' %}">View Details</a></p> {% endcomment %}
+                                    </div>
+                                    <div class="ml-auto">
+                                        <p class="bg-success text-white py-1 px-2 rounded small mb-1">{{i.status}}</p>
+                                        <p class="small font-weight-bold text-center"><i class="feather-clock"></i>
+                                            {{i.timestamp}}</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex pt-3">
+                                    <div class="small">
+                                        {% comment %} <p class="text- font-weight-bold mb-0">Kesar Sweet x 1</p>
+                                        <p class="text- font-weight-bold mb-0">Gulab Jamun x 4</p> {% endcomment %}
+                                    </div>
+                                    <div class="text-muted m-0 ml-auto mr-3 small">Total Payment<br>
+                                        <span class="text-dark font-weight-bold">Rs:{{i.amount}}</span>
+                                    </div>
+                                    <div class="text-right">
+                                        {% comment %} <a href="{% url 'checkout' %}" class="btn btn-primary px-3">Reorder</a> {% endcomment %}
+                                        <a href="{% url 'contact_us' %}" class="btn btn-outline-primary px-3">Help</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {%endfor%}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </section>
+
+    {% include 'footer.html'%}
+    
+    <script type="7210761b33947a5a567b0d31-text/javascript" src="{% static 'vendor/jquery/jquery.min.js ' %}"></script>
+    <script type="7210761b33947a5a567b0d31-text/javascript"
+        src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js ' %}"></script>
+
+    <script type="7210761b33947a5a567b0d31-text/javascript" src="{% static 'vendor/slick/slick.min.js ' %}"></script>
+
+    <script type="7210761b33947a5a567b0d31-text/javascript"
+        src="{% static 'vendor/sidebar/hc-offcanvas-nav.js ' %}"></script>
+
+    <script type="7210761b33947a5a567b0d31-text/javascript" src="{% static 'js/osahan.js ' %}"></script>
+    <script src="{% static ' cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js ' %}"
+        data-cf-settings="7210761b33947a5a567b0d31-|49" defer=""></script>
+    <script defer
+        src="{% static 'https://static.cloudflareinsights.com/beacon.min.js ' %}/v652eace1692a40cfa3763df669d7439c1639079717194"
+        integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw=="
+        data-cf-beacon='{"rayId":"746e3a529c34c928","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}'
+        crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/my_order' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:56:10 GMT -->
+
+</html>

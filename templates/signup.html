@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"> {% load static %}
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/signup.html' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:56:08 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Askbootstrap">
+<meta name="author" content="Askbootstrap">
+<link rel="icon" type="image/png" href="{% static 'img/fav.png' %}">
+<title>Swiggiweb - Online Food Ordering Website Template</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css ' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css ' %}" />
+
+<link href="{% static 'vendor/icons/feather.css ' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css ' %}" rel="stylesheet">
+
+<link href="{% static 'css/style.css ' %}" rel="stylesheet">
+
+<link href="{% static 'vendor/sidebar/demo.css ' %}" rel="stylesheet">
+</head>
+<body>
+<div class="osahan-signup login-page">
+<video loop autoplay muted id="vid">
+<source src="{% static 'img/bg.mp4'%}" type="video/mp4">
+<source src="{% static 'img/bg.mp4'%}" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+<div class="d-flex align-items-center justify-content-center flex-column vh-100">
+<div class="px-5 col-md-6 ml-auto">
+<div class="px-5 col-10 mx-auto">
+<h2 class="text-dark my-0">Hello There.</h2>
+<p class="text-50">Sign up to continue</p>
+<form class="mt-5 mb-4" action="/signup" method="POST">
+<div class="form-group">
+<label for="exampleInputName1" class="text-dark">Name</label>
+<input type="text" name='name' placeholder="Enter Name" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
+</div>
+<div class="form-group">
+<label for="exampleInputNumber1" class="text-dark">Mobile Number</label>
+<input type="number" name="number" placeholder="Enter Mobile" class="form-control" id="exampleInputNumber1" aria-describedby="numberHelp">
+</div>
+<div class="form-group">
+    <label for="exampleInputPassword1" class="text-dark">Email</label>
+    <input type="email"  name='email'placeholder="Enter Your Email" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1" class="text-dark">Address</label>
+        <input type="address"  name='address'placeholder="Enter Your Address" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1" class="text-dark">Select Your Area</label>
+            <select name="area  " id="area">
+                <option value="maisammaguda">Maisammaguda</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+<div class="form-group">
+<label for="exampleInputPassword1" class="text-dark">Password</label>
+<input type="password"  name='password'placeholder="Enter Password" class="form-control" id="exampleInputPassword1">
+</div>
+<div class="">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<input name="terms" type="checkbox" id="terms" checked /><label >I Agree Your <a href="{% url 'terms'%}" target="_blank"> Terms and conditions</a></label></br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp<input name="privacy" type="checkbox" id="privacy" checked /></label>I Agree Your <a href="{% url 'privacy'%}" target="_blank">Privacy Policy</a></label>
+
+</div>
+<button type="submit" id="submitbtn" class="btn btn-primary btn-lg btn-block" >
+SIGN UP
+</button>
+</form>
+</div>
+<div class="new-acc d-flex align-items-center justify-content-center">
+<a href="{% url 'login' %}">
+<p class="text-center m-0">Already an account? Sign in</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<nav id="main-nav">
+<ul class="second-nav">
+<li><a href="{% url 'home' %}"><i class="feather-home mr-2"></i> Homepage</a></li>
+<li><a href="{% url 'my_order' %}"><i class="feather-list mr-2"></i> My Orders</a></li>
+<li>
+<a href="#"><i class="feather-edit-2 mr-2"></i> Authentication</a>
+<ul>
+<li><a href="{% url 'login' %}">Login</a></li>
+<li><a href="{% url 'signup' %}">Register</a></li>
+<li><a href="{% url 'forgot_password' %}">Forgot Password</a></li>
+<li><a href="{% url 'verification' %}">Verification</a></li>
+<li><a href="{% url 'location' %}">Location</a></li>
+ </ul>
+</li>
+<li><a href="{% url 'favorites' %}"><i class="feather-heart mr-2"></i> Favorites</a></li>
+<li><a href="{% url 'trending' %}"><i class="feather-trending-up mr-2"></i> Trending</a></li>
+<li><a href="{% url 'most_popular' %}"><i class="feather-award mr-2"></i> Most Popular</a></li>
+<li><a href="{% url 'restaurant' %}"><i class="feather-paperclip mr-2"></i> Restaurant Detail</a></li>
+<li><a href="{% url 'checkout' %}"><i class="feather-list mr-2"></i> Checkout</a></li>
+<li><a href="{% url 'successful' %}"><i class="feather-check-circle mr-2"></i> Successful</a></li>
+<li><a href="{% url 'map' %}"><i class="feather-map-pin mr-2"></i> Live Map</a></li>
+<li>
+<a href="#"><i class="feather-user mr-2"></i> Profile</a>
+<ul>
+<li><a href="{% url 'profile' %}">Profile</a></li>
+<li><a href="{% url 'favorites' %}">Delivery support</a></li>
+<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+<li><a href="{% url 'terms' %}">Terms of use</a></li>
+<li><a href="{% url 'privacy' %}">Privacy & Policy</a></li>
+</ul>
+</li>
+<li>
+<a href="#"><i class="feather-alert-triangle mr-2"></i> Error</a>
+<ul>
+<li><a href="{% url 'not_found' %}">Not Found</a>
+<li><a href="{% url 'maintence' %}"> Maintence</a>
+<li><a href="{% url 'coming_soon' %}">Coming Soon</a>
+</ul>
+</li>
+<li>
+<a href="#"><i class="feather-link mr-2"></i> Navigation Link Example</a>
+<ul>
+<li>
+<a href="#">Link Example 1</a>
+<ul>
+<li>
+<a href="#">Link Example 1.1</a>
+<ul>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Link Example 1.2</a>
+<ul>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">Link Example 2</a></li>
+<li><a href="#">Link Example 3</a></li>
+<li><a href="#">Link Example 4</a></li>
+<li data-nav-custom-content>
+<div class="custom-message">
+You can add any custom content to your navigation items. This text is just an example.
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="bottom-nav">
+<li class="email">
+<a class="text-danger" href="{% url 'home' %}">
+<p class="h5 m-0"><i class="feather-home text-danger"></i></p>
+Home
+</a>
+</li>
+<li class="github">
+<a href="{% url 'faq' %}">
+<p class="h5 m-0"><i class="feather-message-circle"></i></p>
+FAQ
+</a>
+ </li>
+<li class="ko-fi">
+<a href="{% url 'contact_us' %}">
+<p class="h5 m-0"><i class="feather-phone"></i></p>
+Help
+</a>
+</li>
+</ul>
+</nav>
+
+<script type="03d609b03ccaf347b6cacdb0-text/javascript" src="{% static 'vendor/jquery/jquery.min.js ' %}"></script>
+<script type="03d609b03ccaf347b6cacdb0-text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js ' %}"></script>
+
+<script type="03d609b03ccaf347b6cacdb0-text/javascript" src="{% static 'vendor/slick/slick.min.js ' %}"></script>
+
+<script type="03d609b03ccaf347b6cacdb0-text/javascript" src="{% static 'vendor/sidebar/hc-offcanvas-nav.js ' %}"></script>
+
+<script type="03d609b03ccaf347b6cacdb0-text/javascript" src="{% static 'js/osahan.js ' %}"></script>
+<script src="{% static 'cdn-cgi/scripts/rocket-loader.min.js' %}" data-cf-settings="03d609b03ccaf347b6cacdb0-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"746e3a4b688ac928","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+<script>
+    
+    document.getElementById('terms').addEventListener('click', event => {
+	if(event.target.checked && document.getElementById('privacy').checked) {
+		
+		 $("#submitbtn").attr("disabled", false);
+	}else{
+	    
+	    $("#submitbtn").attr("disabled", true);
+	}
+    });
+    document.getElementById('privacy').addEventListener('click', event => {
+	if(event.target.checked && document.getElementById('terms').checked) {
+		
+		 $("#submitbtn").attr("disabled", false);
+	}else{
+	    
+	    $("#submitbtn").attr("disabled", true);
+	}
+    });
+    
+</script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/signup.html' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:56:08 GMT -->
+</html>

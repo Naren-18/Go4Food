@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en"> {% load static %}
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/home.html' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:55:35 GMT -->
+<head>
+    {%load static%}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Askbootstrap">
+<meta name="author" content="Askbootstrap">
+<link rel="icon" type="image/png" href="{% static 'img/fav.png'%}">
+<title>Go4Food</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css' %}" />
+
+<link href="{% static 'vendor/icons/feather.css' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css.map' %}" rel="stylesheet">
+
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+<link href="{% static 'vendor/sidebar/demo.css' %}" rel="stylesheet">
+<style>
+    .list-card-image .item-img {
+    object-fit: cover;
+}
+</style>
+</head>
+<body class="fixed-bottom-bar">
+    {% include 'header.html'%}
+    
+<div class="osahan-home-page">
+<div class="bg-primary p-3 d-none">
+<div class="text-white">
+<div class="title d-flex align-items-center">
+<a class="toggle" href="#">
+<span></span>
+</a>
+<h4 class="font-weight-bold m-0 pl-5">Browse</h4>
+{% if user.name%}
+<a class="text-white font-weight-bold ml-auto"href="">Hii {{user.name}}</a>
+<a class="text-white font-weight-bold ml-auto"href="{%url 'logout'%}">Logout</a>
+
+
+{%else%}
+<a class="text-white font-weight-bold ml-auto"href="{%url 'login'%}">Login</a>
+{%endif%}
+</div>
+</div>
+</div>
+
+
+<div class="container">
+
+    <div class="pt-4 pb-2 title d-flex align-items-center">
+        <h5 class="m-0">Trending this week</h5>
+        <a class="font-weight-bold ml-auto" href="{% url 'search_products' %}">View all <i class="feather-chevrons-right"></i></a>
+    </div>
+
+    
+    <div class="trending-slider">
+    {% for i in products %}    
+        <div class="osahan-slider-item products">
+            <div class="list-card bg-white  rounded overflow-hidden position-relative shadow-sm">
+                <div class="list-card-image">
+                    
+                    <!--<div class="favourite-heart text-danger position-absolute"><a href="#"><i class="feather-heart"></i></a>-->
+                    <!--</div>-->
+                    <!--<div class="member-plan position-absolute"><span class="badge badge-dark">Promoted</span>-->
+                    <!--</div>-->
+                    <!--<a href="{% url 'restaurant' %}?data={{i.Restaurent_s_id}}">-->
+                    <!--    <img alt="#" src="food/static/img/{{i.image}}" class="img-fluid item-img " style="height:300px; width:100%; object-fit: fill;">-->
+                    <!--</a>-->
+                </div>
+                <div class="p-3 position-relative">
+                    <div class="list-card-body">
+                        <h6 class="mb-1">
+                            <a href="{% url 'restaurant' %}?data={{i.Restaurent_s_id}}" class="text-black">{{i.product_name}}
+                            </a>
+                        </h6>
+                        <p class="text-gray mb-3">Vegetarian • Indian • Pure veg</p>
+                        <p class="text-gray mb-3 time"><span class="bg-light text-dark rounded-sm pl-2 pb-1 pt-1 pr-2"><i class="feather-clock"></i> 15–30 min</span> <span class="float-right text-black"> {{i.price}} Rs</span></p>
+                    </div>
+                    <div class="list-card-badge">
+                        <span class="badge badge-danger">OFFER</span> <small> 20% OFF</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {%endfor%}
+
+</div>
+<div class="py-3 title d-flex align-items-center">
+<h5 class="m-0">Most popular</h5>
+<a class="font-weight-bold ml-auto" href="{% url 'search_restaurent' %}">26 places <i class="feather-chevrons-right"></i></a>
+</div>
+
+<div class="most_popular">
+    <div class="row">
+        {% for i in restaurant %}   
+            <div class="col-md-3 pb-3 restaurants_list">
+                <div class="list-card bg-white h-100 rounded overflow-hidden position-relative shadow-sm">
+                    <div class="list-card-image">
+                        <!--<div class="star position-absolute">-->
+                        <!--    <span class="badge badge-success"><i class="feather-star"></i> 3.1 (300+)</span>-->
+                        <!--</div>-->
+                        <!--<div class="favourite-heart text-danger position-absolute">-->
+                        <!--    <a href="#"><i class="feather-heart"></i></a>-->
+                        <!--</div>-->
+                        <!--<div class="member-plan position-absolute">-->
+                        <!--    <span class="badge badge-dark">Promoted</span>-->
+                        <!--</div>-->
+                        <a href="{% url 'restaurant' %}?data={{i.id}}">
+                            <img alt="#" src="food/static/img/{{i.image}}" height="10px" class="img-fluid item-img w-100" style="height:300px; width:100%; object-fit: fill;">
+                        </a>
+                    </div>
+                    <div class="p-3 position-relative">
+                        <div class="list-card-body">
+                            <h6 class="mb-1">
+                                <a href="{% url 'restaurant' %}?data={{i.id}}" class="text-black">{{i.Restaurent_name}}</a>
+                            </h6>
+                            <p class="text-gray mb-1 small">{{i.type}}•{{i.address}}</p>
+                            <!--<p class="text-gray mb-1 rating"></p>-->
+                            <!--<ul class="rating-stars list-unstyled">-->
+                            <!--    <li>-->
+                            <!--        <i class="feather-star star_active"></i>-->
+                            <!--        <i class="feather-star star_active"></i>-->
+                            <!--        <i class="feather-star star_active"></i>-->
+                            <!--        <i class="feather-star star_active"></i>-->
+                            <!--        <i class="feather-star"></i>-->
+                            <!--    </li>-->
+                                
+                            <!--    <p></p>-->
+                            <!--</ul>-->
+                            <div class="list-card-badge">
+                                <span class="badge badge-danger">OFFER</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        {%endfor%}    
+         
+    </div>
+
+</div>
+
+
+{% include 'footer.html'%}
+
+    
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".products:gt(2)").hide();
+        $(".restaurants_list:gt(3)").hide();
+    });
+</script>
+    <script type="01b4c2ba4da0f7925ba7b4cb-text/javascript" src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+    <script type="01b4c2ba4da0f7925ba7b4cb-text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    
+    <script type="01b4c2ba4da0f7925ba7b4cb-text/javascript" src="{% static 'vendor/slick/slick.min.js' %}"></script>
+    
+    <script type="01b4c2ba4da0f7925ba7b4cb-text/javascript" src="{% static 'vendor/sidebar/hc-offcanvas-nav.js' %}"></script>
+    
+    <script type="01b4c2ba4da0f7925ba7b4cb-text/javascript" src="{% static 'js/osahan.js' %}"></script>
+    <script src="{% static 'cdn-cgi/scripts/rocket-loader.min.js' %}" data-cf-settings="01b4c2ba4da0f7925ba7b4cb-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"746e39e27fefc95c","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/home.html' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:55:54 GMT -->
+</html>

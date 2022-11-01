@@ -1,0 +1,60 @@
+{% load static%}
+<footer class="section-footer border-top bg-dark">
+    <div class="container">
+    <section class="footer-top padding-y py-5">
+    <div class="row pt-3">
+    <aside class="col-md-4 footer-about">
+    <article class="d-flex pb-3">
+    <div><img alt="#" src="{% static 'img/logo_web.png' %}" class="logo-footer mr-3"></div>
+    <div>
+    <h6 class="title text-white">About Us</h6>
+    <p class="text-muted">Go4food is online food ordering site which is operational in and around maisammaguda area</p>
+    <div class="d-flex align-items-center">
+    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Facebook" target="_blank" href="#"><i class="feather-facebook"></i></a>
+    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Instagram" target="_blank" href="#"><i class="feather-instagram"></i></a>
+    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Youtube" target="_blank" href="#"><i class="feather-youtube"></i></a>
+    <a class="btn btn-icon btn-outline-light mr-1 btn-sm" title="Twitter" target="_blank" href="#"><i class="feather-twitter"></i></a>
+    </div>
+    </div>
+    </article>
+    </aside>
+    <aside class="col-sm-3 col-md-2 text-white">
+    <h6 class="title">Error Pages</h6>
+    <ul class="list-unstyled hov_footer">
+    <li> <a href="{% url 'not_found' %}" class="text-muted">Not found</a></li>
+    <li> <a href="{% url 'maintence' %}" class="text-muted">Maintence</a></li>
+    <li> <a href="{% url 'coming_soon' %}" class="text-muted">Coming Soon</a></li>
+    </ul>
+    </aside>
+    <aside class="col-sm-3 col-md-2 text-white">
+    <h6 class="title">Services</h6>
+    <ul class="list-unstyled hov_footer">
+    <li> <a href="{% url 'faq' %}" class="text-muted">Delivery Support</a></li>
+    <li> <a href="{% url 'contact_us' %}" class="text-muted">Contact Us</a></li>
+    <li> <a href="{% url 'terms' %}" class="text-muted">Terms of use</a></li>
+    <li> <a href="{% url 'privacy' %}" class="text-muted">Privacy policy</a></li>
+    </ul>
+    </aside>
+    <aside class="col-sm-3  col-md-2 text-white">
+    <h6 class="title">For users</h6>
+    <ul class="list-unstyled hov_footer">
+    <li> <a href="{% url 'login' %}" class="text-muted"> User Login </a></li>
+    <li> <a href="{% url 'signup' %}" class="text-muted"> User register </a></li>
+    <li> <a href="{% url 'forgot_password' %}" class="text-muted"> Forgot Password </a></li>
+    <li> <a href="{% url 'profile' %}" class="text-muted"> Account Setting </a></li>
+    </ul>
+    </aside>
+    <aside class="col-sm-3  col-md-2 text-white">
+    <h6 class="title">More Pages</h6>
+    <ul class="list-unstyled hov_footer">
+    <li> <a href="{% url 'trending' %}" class="text-muted"> Trending </a></li>
+    <li> <a href="{% url 'most_popular' %}" class="text-muted"> Most popular </a></li>
+    <li> <a href="{% url 'restaurant' %}" class="text-muted"> Restaurant Details </a></li>
+    <li> <a href="{% url 'favorites' %}" class="text-muted"> Favorites </a></li>
+    </ul>
+    </aside>
+    </div>
+    
+    </section>
+    
+    </footer>

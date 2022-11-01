@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"> {% load static %}
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/status_canceled' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:56:14 GMT -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Askbootstrap">
+<meta name="author" content="Askbootstrap">
+<link rel="icon" type="image/png" href="{% static 'img/fav.png' %}">
+<title>Swiggiweb - Online Food Ordering Website Template</title>
+
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.min.css ' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick-theme.min.css ' %}" />
+
+<link href="{% static 'vendor/icons/feather.css ' %}" rel="stylesheet" type="text/css">
+
+<link href="{% static 'vendor/bootstrap/css/bootstrap.min.css ' %}" rel="stylesheet">
+
+<link href="{% static 'css/style.css ' %}" rel="stylesheet">
+
+<link href="{% static 'vendor/sidebar/demo.css ' %}" rel="stylesheet">
+</head>
+<body class="fixed-bottom-bar">
+    {% include 'header.html'%}
+<div class="d-none">
+<div class="bg-primary p-3 d-flex align-items-center">
+<a class="toggle togglew toggle-2" href="#"><span></span></a>
+<h4 class="font-weight-bold m-0 text-white">My Order</h4>
+</div>
+</div>
+<section class="py-4 osahan-main-body">
+<div class="container">
+<div class="row">
+<div class="col-md-3">
+<ul class="nav nav-tabsa custom-tabsa border-0 flex-column bg-white rounded overflow-hidden shadow-sm p-2 c-t-order" id="myTab" role="tablist">
+<li class="nav-item" role="presentation">
+<a class="nav-link border-0 text-dark py-3 active" href="{% url 'my_order' %}">
+<i class="feather-check mr-2 text-success mb-0"></i> Completed</a>
+</li>
+<li class="nav-item border-top" role="presentation">
+<a class="nav-link border-0 text-dark py-3" href="{% url 'my_order' %}">
+<i class="feather-clock mr-2 text-warning mb-0"></i> On Progress</a>
+</li>
+<li class="nav-item border-top" role="presentation">
+<a class="nav-link border-0 text-dark py-3" href="{% url 'my_order' %}">
+<i class="feather-x-circle mr-2 text-danger mb-0"></i> Canceled</a>
+</li>
+</ul>
+</div>
+<div class="col-md-9">
+
+<section class="bg-white osahan-main-body rounded shadow-sm overflow-hidden">
+<div class="container p-0">
+<div class="row">
+<div class="col-lg-12">
+<div class="osahan-status">
+
+<div class="p-3 status-order border-bottom bg-white">
+<p class="small m-0"><i class="feather-calendar text-primary"></i> 16 June, 11:30AM</p>
+</div>
+<div class="p-3 border-bottom">
+<h6 class="font-weight-bold">Order Status</h6>
+ <div class="tracking-wrap">
+<div class="step active">
+<span class="icon text-success"><i class="feather-check-circle"></i></span>
+<span class="text small">Ordered</span>
+</div>
+
+<div class="step active">
+<span class="icon text-danger"><i class="feather-x-circle"></i></span>
+<span class="text small">Canceled</span>
+</div>
+
+</div>
+</div>
+
+<div class="p-3 border-bottom bg-white">
+<h6 class="font-weight-bold">Destination</h6>
+<p class="m-0 small">554 West 142nd Street, New York, NY 10031</p>
+</div>
+<div class="p-3 border-bottom">
+<p class="font-weight-bold small mb-1">Courier</p>
+<img alt="#" src="{% static 'img/logo_web.png' %}" class="img-fluid sc-osahan-logo mr-2"> <span class="small text-primary font-weight-bold">Grocery Courier
+</span>
+</div>
+
+
+<div class="p-3 border-bottom bg-white">
+<div class="d-flex align-items-center mb-2">
+<h6 class="font-weight-bold mb-1">Total Cost</h6>
+<h6 class="font-weight-bold ml-auto mb-1">$8.52</h6>
+</div>
+<p class="m-0 small text-muted">You can check your order detail here,<br>Thank you for order.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+</section>
+
+{% include 'footer.html'%}
+<nav id="main-nav">
+<ul class="second-nav">
+<li><a href="{% url 'home' %}"><i class="feather-home mr-2"></i> Homepage</a></li>
+<li><a href="{% url 'my_order' %}"><i class="feather-list mr-2"></i> My Orders</a></li>
+<li>
+<a href="#"><i class="feather-edit-2 mr-2"></i> Authentication</a>
+<ul>
+<li><a href="{% url 'login' %}">Login</a></li>
+<li><a href="{% url 'signup' %}">Register</a></li>
+<li><a href="{% url 'forgot_password' %}">Forgot Password</a></li>
+<li><a href="{% url 'verification' %}">Verification</a></li>
+<li><a href="{% url 'location' %}">Location</a></li>
+</ul>
+</li>
+<li><a href="{% url 'favorites' %}"><i class="feather-heart mr-2"></i> Favorites</a></li>
+<li><a href="{% url 'trending' %}"><i class="feather-trending-up mr-2"></i> Trending</a></li>
+<li><a href="{% url 'most_popular' %}"><i class="feather-award mr-2"></i> Most Popular</a></li>
+<li><a href="{% url 'restaurant' %}"><i class="feather-paperclip mr-2"></i> Restaurant Detail</a></li>
+<li><a href="{% url 'checkout' %}"><i class="feather-list mr-2"></i> Checkout</a></li>
+<li><a href="{% url 'successful' %}"><i class="feather-check-circle mr-2"></i> Successful</a></li>
+<li><a href="{% url 'map' %}"><i class="feather-map-pin mr-2"></i> Live Map</a></li>
+<li>
+<a href="#"><i class="feather-user mr-2"></i> Profile</a>
+<ul>
+<li><a href="{% url 'profile' %}">Profile</a></li>
+<li><a href="{% url 'favorites' %}">Delivery support</a></li>
+<li><a href="{% url 'contact_us' %}">Contact Us</a></li>
+<li><a href="{% url 'terms' %}">Terms of use</a></li>
+<li><a href="{% url 'privacy' %}">Privacy & Policy</a></li>
+</ul>
+</li>
+<li>
+<a href="#"><i class="feather-alert-triangle mr-2"></i> Error</a>
+<ul>
+<li><a href="{% url 'not_found' %}">Not Found</a>
+<li><a href="{% url 'maintence' %}"> Maintence</a>
+<li><a href="{% url 'coming_soon' %}">Coming Soon</a>
+</ul>
+</li>
+<li>
+<a href="#"><i class="feather-link mr-2"></i> Navigation Link Example</a>
+<ul>
+<li>
+<a href="#">Link Example 1</a>
+<ul>
+<li>
+<a href="#">Link Example 1.1</a>
+<ul>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+</ul>
+</li>
+<li>
+<a href="#">Link Example 1.2</a>
+<ul>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+<li><a href="#">Link</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#">Link Example 2</a></li>
+<li><a href="#">Link Example 3</a></li>
+<li><a href="#">Link Example 4</a></li>
+<li data-nav-custom-content>
+<div class="custom-message">
+You can add any custom content to your navigation items. This text is just an example.
+</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul class="bottom-nav">
+<li class="email">
+<a class="text-danger" href="{% url 'home' %}">
+<p class="h5 m-0"><i class="feather-home text-danger"></i></p>
+Home
+</a>
+</li>
+<li class="github">
+<a href="{% url 'faq' %}">
+<p class="h5 m-0"><i class="feather-message-circle"></i></p>
+FAQ
+</a>
+</li>
+<li class="ko-fi">
+<a href="{% url 'contact_us' %}">
+<p class="h5 m-0"><i class="feather-phone"></i></p>
+Help
+</a>
+</li>
+</ul>
+</nav>
+<script type="58cdcee289bb28468d8a1443-text/javascript" src="{% static 'vendor/jquery/jquery.min.js ' %}"></script>
+<script type="58cdcee289bb28468d8a1443-text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js ' %}"></script>
+
+<script type="58cdcee289bb28468d8a1443-text/javascript" src="{% static 'vendor/slick/slick.min.js ' %}"></script>
+
+<script type="58cdcee289bb28468d8a1443-text/javascript" src="{% static 'vendor/sidebar/hc-offcanvas-nav.js ' %}"></script>
+
+<script type="58cdcee289bb28468d8a1443-text/javascript" src="{% static 'js/osahan.js ' %}"></script>
+<script src="{% static 'cdn-cgi/scripts/rocket-loader.min.js' %}" data-cf-settings="58cdcee289bb28468d8a1443-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"746e3ac57c7ccb21","version":"2022.8.1","r":1,"token":"dd471ab1978346bbb991feaa79e6ce5c","si":100}' crossorigin="anonymous"></script>
+</body>
+
+<!-- Mirrored from askbootstrap.com/preview/swiggiweb/status_canceled' %} by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 07 Sep 2022 08:56:14 GMT -->
+</html>
