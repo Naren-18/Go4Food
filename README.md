@@ -26,31 +26,31 @@ Go4Food is a Django project. It is a web-based application designed to facilitat
 ### 🖼️ Screenshots
 
 **Home Page**
-![ScreenShots9](./Screenshots/1.png)
+![ScreenShots9](./screens/1.png)
 
 **Login Screen**
-![ScreenShots8](./Screenshots/2.png)
+![ScreenShots8](./screens/2.png)
 
 **SignUp Page**
-![ScreenShots7](./Screenshots/3.png)
+![ScreenShots7](./screens/3.png)
 
 **Order Page**
-![ScreenShots6](./Screenshots/4.png)
+![ScreenShots6](./screens/4.png)
 
 **Cart Page**
-![ScreenShots5](./Screenshots/5.png)
+![ScreenShots5](./screens/5.png)
 
 **Order Success**
-![ScreenShots4](./Screenshots/6.png)
+![ScreenShots4](./screens/6.png)
 
 **My Account**
-![ScreenShots3](./Screenshots/7.png)
+![ScreenShots3](./screens/7.png)
 
 **Track Order**
-![ScreenShots2](./Screenshots/8.png)
+![ScreenShots2](./screens/8.png)
 
 **Order Status Page**
-![ScreenShots](./Screenshots/9.png)
+![ScreenShots](./screens/9.png)
 
 
 <br>
