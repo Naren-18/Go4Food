@@ -10,6 +10,29 @@ Go4Food is a Django project. It is a web-based application designed to facilitat
 - 🧑‍🍳 Admin & Vendor Dashboard – Manage restaurants, menus, and order status.
 <br>
 
+## 🗂️ Project Structure
+```bash
+go4food/
+├── go4food/ # Main Django project folder (settings, urls, wsgi, asgi)
+│ ├── init.py
+│ ├── settings.py # Project settings (DB, middleware, installed apps, etc.)
+│ ├── urls.py # URL routing for the project
+│ ├── wsgi.py # WSGI entry point
+│ ├── asgi.py # ASGI entry point
+│
+├── apps/ # Custom Django apps for modular development
+│ ├── orders/ # Orders app (models, views, urls, templates)
+│ ├── users/ # Users app (authentication, profiles, JWT integration)
+│ ├── menu/ # Menu/food items app (CRUD for food items)
+│ └── ...
+│
+├── templates/ # Global HTML templates
+├── static/ # Static files (CSS, JS, images)
+├── manage.py # Django management script
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
+
+
 ### 🛠️ Installation
 
 - run `pip install -r requirements.txt`
